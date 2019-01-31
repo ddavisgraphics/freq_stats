@@ -1,0 +1,3 @@
+en:
+  config: 
+    type_error: 'Object must be a valid String, or Array with 3 or more items.'

@@ -1,5 +1,2 @@
-require "freq_stats/version"
-
-module FreqStats
-  # Your code goes here...
-end
+require 'freq_stats/version'
+require 'freq_stats/super_array'

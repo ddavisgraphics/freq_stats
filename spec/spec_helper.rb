@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "freq_stats"
+require 'simplecov'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,3 +13,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+SimpleCov.start do
+  add_group "lib", "lib"
+end 
