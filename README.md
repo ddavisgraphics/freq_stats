@@ -1,8 +1,6 @@
 # FreqStats
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/freq_stats`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A gem that helps to provide some stats for arrays of text.  Initially it was created to help me name my cat, but I figured it could have other uses and I hope it helps someone.   
 
 ## Installation
 
@@ -21,8 +19,22 @@ Or install it yourself as:
     $ gem install freq_stats
 
 ## Usage
+Freq stats has 3 types methods for getting and dealing with frequencies of items in arrays.  Mode- which returns the most popular item in the array, Top 3- which returns the top 3 items in the array an the items numerical count, and frequency list which returns all items and items numerical count.  
 
-TODO: Write usage instructions here
+### Sample Code
+Simply require the freq stats gem, feed your array to the `FreqStats::SuperArray` and use the results in whatever way you intended.
+
+Comes in handy when trying to randomly choose a name for your cat, or trying to figure out some statistics of an array.  Might come in handing when creating n grams for AI or generating some common search terms.  
+
+```ruby
+    require 'freq_stats'
+
+    array_of_names = ["The Great Goblin", "Veiled Lady", "Bert", "Aerys II Targaryen", "Magrathean sperm whale", "The Great Goblin", "Oin", "Oin", "Oin", "Bofur", "Bert", "Bert", "JinJenz", "JinJenz", "Oin", "Bofur", "Bofur", "Bofur", "Bofur", "Oin"]
+
+    FreqStats::SuperArray.new(array_of_names).mode # ["Oin", 5]
+    FreqStats::SuperArray.new(array_of_names).top_3 # ["Oin", "Bofur", "Bert"]
+    FreqStats::SuperArray.new(array_of_names).freq_list # [["Oin", 5], ["Bofur", 5], ["Bert", 3], ["The Great Goblin", 2], ["JinJenz", 2], ["Aerys II Targaryen", 1], ["Veiled Lady", 1], ["Magrathean sperm whale", 1]]
+``` 
 
 ## Development
 
